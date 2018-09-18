@@ -1,12 +1,13 @@
 package com.scotthensen.fooclinicdata.model;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Person extends BaseEntity
+public class BaseEntity implements Serializable
 {
-	private String firstName;
-	private String lastName;
+	private Long id;
 }
