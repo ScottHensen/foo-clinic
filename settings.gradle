@@ -1,0 +1,3 @@
+rootProject.name = 'foo-clinic'
+
+include 'foo-clinic-data', 'foo-clinic-web'

@@ -1,0 +1,19 @@
+subprojects {
+	repositories {
+		mavenCentral()
+	}
+}
+
+def javaProjects = subprojects.findAll {
+	it.name in ['foo-clinic-data', 'foo-clinic-web']
+}
+
+configure(javaProjects) {
+	apply plugin: 'java'
+}
+
+project(':foo-clinic-web') {
+	dependencies {
+		compile project(':foo-clinic-data')
+	}
+}

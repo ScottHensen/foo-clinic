@@ -1,0 +1,38 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+/bin/
+/doc/~*
+/scraps/
+
+### App-Specific ###
+/foo-clinic/build/
+/foo-clinic/bin/
+/foo-clinic-data/build/
+/foo-clinic-data/bin/
+/foo-clinic-web/build/
+/foo-clinic-web/bin/
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
