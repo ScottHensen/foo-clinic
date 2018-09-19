@@ -1,16 +1,8 @@
 package com.scotthensen.fooclinicdata.service;
 
-import java.util.Set;
-
 import com.scotthensen.fooclinicdata.model.Owner;
 
-public interface OwnerSvc 
+public interface OwnerSvc extends CrudSvc<Owner, Long>
 {
 	Owner findByLastName(String lastName);
-
-	Owner findById(Long id);
-	
-	Owner save(Owner owner);
-	
-	Set<Owner> findAll();
 }

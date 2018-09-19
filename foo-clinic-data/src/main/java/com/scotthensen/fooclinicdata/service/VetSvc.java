@@ -1,14 +1,8 @@
 package com.scotthensen.fooclinicdata.service;
 
-import java.util.Set;
-
 import com.scotthensen.fooclinicdata.model.Vet;
 
-public interface VetSvc 
+public interface VetSvc extends CrudSvc<Vet, Long>
 {
-	Vet findById(Long id);
-	
-	Vet save(Vet vet);
-	
-	Set<Vet> findAll();
+
 }
