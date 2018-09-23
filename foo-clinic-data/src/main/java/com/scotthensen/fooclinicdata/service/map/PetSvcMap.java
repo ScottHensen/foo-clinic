@@ -3,9 +3,9 @@ package com.scotthensen.fooclinicdata.service.map;
 import java.util.Set;
 
 import com.scotthensen.fooclinicdata.model.Pet;
-import com.scotthensen.fooclinicdata.service.CrudSvc;
+import com.scotthensen.fooclinicdata.service.PetSvc;
 
-public class PetSvcMap extends AbstractMapSvc<Pet, Long> implements CrudSvc<Pet, Long>
+public class PetSvcMap extends AbstractMapSvc<Pet, Long> implements PetSvc
 {
 	@Override
 	public Set<Pet> findAll() {

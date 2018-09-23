@@ -3,9 +3,9 @@ package com.scotthensen.fooclinicdata.service.map;
 import java.util.Set;
 
 import com.scotthensen.fooclinicdata.model.Owner;
-import com.scotthensen.fooclinicdata.service.CrudSvc;
+import com.scotthensen.fooclinicdata.service.OwnerSvc;
 
-public class OwnerSvcMap extends AbstractMapSvc<Owner, Long> implements CrudSvc<Owner, Long>
+public class OwnerSvcMap extends AbstractMapSvc<Owner, Long> implements OwnerSvc
 {
 
 	@Override
@@ -36,6 +36,12 @@ public class OwnerSvcMap extends AbstractMapSvc<Owner, Long> implements CrudSvc<
 	public void delete(Owner object) 
 	{
 		super.delete(object);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
