@@ -1,4 +1,4 @@
-package com.scotthensen.fooclinicdata.service;
+package com.scotthensen.fooclinic.service;
 
 import java.util.Set;
 

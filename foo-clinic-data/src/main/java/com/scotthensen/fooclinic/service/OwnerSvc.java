@@ -1,6 +1,6 @@
-package com.scotthensen.fooclinicdata.service;
+package com.scotthensen.fooclinic.service;
 
-import com.scotthensen.fooclinicdata.model.Owner;
+import com.scotthensen.fooclinic.model.Owner;
 
 public interface OwnerSvc extends CrudSvc<Owner, Long>
 {

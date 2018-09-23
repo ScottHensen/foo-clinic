@@ -1,4 +1,4 @@
-package com.scotthensen.fooclinicdata.model;
+package com.scotthensen.fooclinic.model;
 
 import lombok.Getter;
 import lombok.Setter;
