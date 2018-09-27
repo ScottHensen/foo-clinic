@@ -16,11 +16,12 @@ public class OwnerController
 		this.ownerSvc = ownerSvc;
 	}
 	
-	@RequestMapping({"", "/", "/index", "/index.html"})
+	@RequestMapping( { "", "/", "/index", "/index.html" } )
 	public String listOwners(Model model)
 	{
 		model.addAttribute( "owners", ownerSvc.findAll() );
 		
 		return "owners/index";
 	}
+
 }
