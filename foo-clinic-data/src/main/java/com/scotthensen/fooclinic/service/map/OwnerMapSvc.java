@@ -2,6 +2,7 @@ package com.scotthensen.fooclinic.service.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.scotthensen.fooclinic.model.Owner;
@@ -11,6 +12,7 @@ import com.scotthensen.fooclinic.service.PetSvc;
 import com.scotthensen.fooclinic.service.PetTypeSvc;
 
 @Service
+@Profile( {"default", "map"} )
 public class OwnerMapSvc extends AbstractMapSvc<Owner, Long> implements OwnerSvc
 {
 	private final PetTypeSvc petTypeSvc;

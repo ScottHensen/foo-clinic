@@ -34,7 +34,7 @@ public class VetSDJpaSvc implements VetSvc
 	@Override
 	public Vet save(Vet object) 
 	{
-		return save(object);
+		return vetRepo.save(object);
 	}
 
 	@Override

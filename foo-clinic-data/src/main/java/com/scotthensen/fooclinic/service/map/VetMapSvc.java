@@ -2,6 +2,7 @@ package com.scotthensen.fooclinic.service.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.scotthensen.fooclinic.model.Specialty;
@@ -10,6 +11,7 @@ import com.scotthensen.fooclinic.service.SpecialtySvc;
 import com.scotthensen.fooclinic.service.VetSvc;
 
 @Service
+@Profile( {"default", "map"} )
 public class VetMapSvc extends AbstractMapSvc<Vet, Long> implements VetSvc
 {
 	private final SpecialtySvc specialtySvc;

@@ -10,10 +10,12 @@ import com.scotthensen.fooclinic.model.Pet;
 import com.scotthensen.fooclinic.model.PetType;
 import com.scotthensen.fooclinic.model.Specialty;
 import com.scotthensen.fooclinic.model.Vet;
+import com.scotthensen.fooclinic.model.Visit;
 import com.scotthensen.fooclinic.service.OwnerSvc;
 import com.scotthensen.fooclinic.service.PetTypeSvc;
 import com.scotthensen.fooclinic.service.SpecialtySvc;
 import com.scotthensen.fooclinic.service.VetSvc;
+import com.scotthensen.fooclinic.service.VisitSvc;
 
 @Component
 public class DataLoader implements CommandLineRunner
@@ -22,12 +24,14 @@ public class DataLoader implements CommandLineRunner
 	private final VetSvc   		vetSvc;
 	private final PetTypeSvc 	petTypeSvc;
 	private final SpecialtySvc 	specialtySvc;
+	private final VisitSvc      visitSvc;
 	
-	public DataLoader(OwnerSvc ownerSvc, VetSvc vetSvc, PetTypeSvc petTypeSvc, SpecialtySvc specialtySvc) {
+	public DataLoader(OwnerSvc ownerSvc, VetSvc vetSvc, PetTypeSvc petTypeSvc, SpecialtySvc specialtySvc, VisitSvc visitSvc) {
 		this.ownerSvc 		= ownerSvc;
 		this.vetSvc 		= vetSvc;
 		this.petTypeSvc	 	= petTypeSvc;
 		this.specialtySvc 	= specialtySvc;
+		this.visitSvc       = visitSvc;
 	}
 
 	@Override
@@ -98,6 +102,12 @@ public class DataLoader implements CommandLineRunner
 	
 		ownerSvc.save(owner2);
 		
+		Visit catVisit = new Visit();
+		catVisit.setPet(fionasPet);
+		catVisit.setDate(LocalDate.now());
+		catVisit.setDescription("Sneezy Kitty");
+		
+		visitSvc.save(catVisit);
 		System.out.println("DataLoader:  Loaded owners.");
 		
 		
