@@ -1,11 +1,13 @@
 package com.scotthensen.fooclinic.service.springdatajpa;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.scotthensen.fooclinic.model.Owner;
+import com.scotthensen.fooclinic.model.OwnerPetsDTO;
 import com.scotthensen.fooclinic.repositories.OwnerRepository;
 import com.scotthensen.fooclinic.service.OwnerSvc;
 
@@ -35,6 +37,12 @@ public class OwnerSDJpaSvc implements OwnerSvc
 	public Owner findByLastName(String lastName) 
 	{
 		return ownerRepo.findByLastName(lastName);
+	}
+
+	@Override
+	public List<OwnerPetsDTO> findOwnerPetsByLastName(String lastName) 
+	{
+		return ownerRepo.findOwnerPetsByLastName(lastName);
 	}
 
 	@Override

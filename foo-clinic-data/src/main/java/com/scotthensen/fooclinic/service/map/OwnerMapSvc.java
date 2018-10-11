@@ -1,11 +1,13 @@
 package com.scotthensen.fooclinic.service.map;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.scotthensen.fooclinic.model.Owner;
+import com.scotthensen.fooclinic.model.OwnerPetsDTO;
 import com.scotthensen.fooclinic.model.Pet;
 import com.scotthensen.fooclinic.service.OwnerSvc;
 import com.scotthensen.fooclinic.service.PetSvc;
@@ -39,6 +41,9 @@ public class OwnerMapSvc extends AbstractMapSvc<Owner, Long> implements OwnerSvc
 
 	@Override
 	public Owner findByLastName(String lastName) { return null; } //TODO
+
+	@Override
+	public List<OwnerPetsDTO> findOwnerPetsByLastName(String lastName) { return null; } //TODO
 
 	@Override
 	public Owner save(Owner object) 

@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -34,7 +35,6 @@ public class Owner extends Person
 	
 	@Column( name = "address" )
 	private String address;
-	
 
 	@Column( name = "city" )
 	private String city;
@@ -42,6 +42,16 @@ public class Owner extends Person
 	@Column( name = "telephone" )
 	private String telephone;
 	
-	@OneToMany( cascade = CascadeType.ALL, mappedBy = "owner" )
+	@OneToMany( cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.LAZY )
 	private Set<Pet> pets = new HashSet<>();
+
+	@Override
+	public String toString() {
+		return "Owner [ \n"
+				+ "      address="   + address   + "\n"
+				+ "    , city="      + city      + "\n"
+				+ "    , telephone=" + telephone + "\n"
+//				+ "    , pets="      + pets      + "\n"	 // this will negate lazy loading
+				+ "]";
+	}
 }
