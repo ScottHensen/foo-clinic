@@ -31,9 +31,13 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: gradle -v
-      - run: gradle allDependencies
-      - run: gradle dependencies
+#      - run: gradle -v
+#      - run: gradle allDependencies
+#      - run: gradle dependencies
+
+      - run: ./gradlew -v
+      - run: ./gradlew allDependencies
+      - run: ./gradlew dependencies
 
       - save_cache:
           paths:
