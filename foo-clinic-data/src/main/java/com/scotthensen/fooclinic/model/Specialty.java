@@ -1,5 +1,6 @@
 package com.scotthensen.fooclinic.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
