@@ -40,7 +40,14 @@ public class OwnerMapSvc extends AbstractMapSvc<Owner, Long> implements OwnerSvc
 	public void delete(Owner object) 			{ super.delete(object); }
 
 	@Override
-	public Owner findByLastName(String lastName) { return null; } //TODO
+	public Owner findByLastName(String lastName) 
+	{ 
+		return this.findAll()
+				.stream()
+				.filter(o -> o.getLastName().equalsIgnoreCase(lastName))
+				.findFirst()
+				.orElse(null); 
+	} 
 
 	@Override
 	public List<OwnerPetsDTO> findOwnerPetsByLastName(String lastName) { return null; } //TODO
