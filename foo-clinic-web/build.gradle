@@ -35,7 +35,8 @@ dependencies {
 	testImplementation('org.junit.jupiter:junit-jupiter-api')
 	testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
 	compile('org.apache.maven.plugins:maven-surefire-plugin:2.22.1') 
-
+	testCompile('org.mockito:mockito-junit-jupiter:2.23.0')
+	
 	// Other
 	compileOnly('org.projectlombok:lombok')
 }

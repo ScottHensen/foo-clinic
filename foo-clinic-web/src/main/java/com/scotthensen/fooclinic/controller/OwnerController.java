@@ -32,17 +32,23 @@ public class OwnerController
 		log.info(allOwners.toString());
 		model.addAttribute( "owners", allOwners );
 		
-		log.info("\n >>>>> ownerSvc.findByLastName()");
-		Owner owner = ownerSvc.findByLastName("Doolittle");
-		log.info(owner.toString());
-		model.addAttribute( "ownerEntity",  owner);
-		
-		log.info("\n >>>>> ownerSvc.findOwnerPetsByLastName()");
-		List<OwnerPetsDTO> ownerPets = ownerSvc.findOwnerPetsByLastName("Doolittle");
-		log.info(ownerPets.toString());
-		model.addAttribute( "ownerPetsDTO", ownerPets);
+//--  this is not part of the app.
+//--  just playing around with jpa to see underlying sql calls
+//		log.info("\n >>>>> ownerSvc.findByLastName()");
+//		Owner owner = ownerSvc.findByLastName("Doolittle");
+//		log.info(owner.toString());
+//		model.addAttribute( "ownerEntity",  owner);
+//		
+//		log.info("\n >>>>> ownerSvc.findOwnerPetsByLastName()");
+//		List<OwnerPetsDTO> ownerPets = ownerSvc.findOwnerPetsByLastName("Doolittle");
+//		log.info(ownerPets.toString());
+//		model.addAttribute( "ownerPetsDTO", ownerPets);
 		
 		return "owners/index";
 	}
 
+	@RequestMapping( "/find" )
+	public String findOwners() {
+		return "notimplementedyet";
+	}
 }
