@@ -31,6 +31,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+#--- circleci wants to run gradle 10, which doesn't work with lombok
+#--- so I am using gradlew instead, so we can build with gradle 8 
 #      - run: gradle -v
 #      - run: gradle allDependencies
 #      - run: gradle dependencies
