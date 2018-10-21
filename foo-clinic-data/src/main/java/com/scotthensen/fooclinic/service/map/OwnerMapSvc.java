@@ -33,6 +33,9 @@ public class OwnerMapSvc extends AbstractMapSvc<Owner, Long> implements OwnerSvc
 	@Override
 	public Owner findById(Long id) 				{ return super.findById(id); }
 
+	@Override //TODO
+	public List<Owner> findAllByLastNameLike(String lastName) {return null; }
+
 	@Override
 	public void deleteById(Long id) 			{ super.deleteById(id); }
 

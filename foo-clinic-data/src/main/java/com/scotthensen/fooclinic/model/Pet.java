@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.scotthensen.fooclinic.model.PetType.PetTypeBuilder;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,6 +30,20 @@ import lombok.Setter;
 @Table( name = "pets" )
 public class Pet extends BaseEntity
 {
+	@Builder
+	public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) 
+	{
+		super(id);
+		this.name      = name;
+		this.petType   = petType;
+		this.owner     = owner;
+		this.birthDate = birthDate;
+		
+		if ( visits != null && !visits.isEmpty() ) {
+			this.visits = visits;
+		}
+	}
+
 	@Column( name = "name")
 	private String  name;
 
@@ -43,7 +59,7 @@ public class Pet extends BaseEntity
 	private LocalDate birthDate;
 	
 	@OneToMany( cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.LAZY )
-	@Builder.Default
+	//@Builder.Default
 	private Set<Visit> visits = new HashSet<>();
 
 	@Override

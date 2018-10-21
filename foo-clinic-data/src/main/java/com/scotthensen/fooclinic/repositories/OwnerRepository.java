@@ -18,6 +18,8 @@ public interface OwnerRepository extends CrudRepository<Owner, Long>
 	
 	Set<Owner> findAll();
 	
+	List<Owner> findAllByLastNameLike(String lastName);
+	
 	@Query( value = "SELECT new com.scotthensen.fooclinic.model.OwnerPetsDTO " 
 				  + "     ( o.firstName,   "
 				  + "       o.lastName,    "

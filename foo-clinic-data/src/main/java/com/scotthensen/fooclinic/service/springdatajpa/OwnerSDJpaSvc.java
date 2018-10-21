@@ -40,6 +40,12 @@ public class OwnerSDJpaSvc implements OwnerSvc
 	}
 
 	@Override
+	public List<Owner> findAllByLastNameLike(String lastName)
+	{
+		return ownerRepo.findAllByLastNameLike(lastName);
+	}
+
+	@Override
 	public List<OwnerPetsDTO> findOwnerPetsByLastName(String lastName) 
 	{
 		return ownerRepo.findOwnerPetsByLastName(lastName);

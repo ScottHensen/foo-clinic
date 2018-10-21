@@ -39,6 +39,8 @@ dependencies {
 	
 	// Other
 	compileOnly('org.projectlombok:lombok')
+	compile 'org.webjars:bootstrap:3.3.7-1'
+	
 }
 
 test {

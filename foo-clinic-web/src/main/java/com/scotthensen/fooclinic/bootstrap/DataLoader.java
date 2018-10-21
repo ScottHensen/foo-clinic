@@ -52,7 +52,7 @@ public class DataLoader implements CommandLineRunner
 		PetType savedDogPetType = petTypeSvc.save(dog);
 		
 		PetType cat = new PetType();
-		dog.setName("Cat");
+		cat.setName("Cat");
 		PetType savedCatPetType = petTypeSvc.save(cat);
 		
 		Specialty radiology = new Specialty();
@@ -142,6 +142,7 @@ public class DataLoader implements CommandLineRunner
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Sam");
 		vet1.setLastName("Axe");
+//		vet1.getSpecialties().add(savedRadiology);
 //		vet1.addSpecialty(savedRadiology); //.getSpecialties().add(savedRadiology);
 		vetSvc.save(vet1);
 		

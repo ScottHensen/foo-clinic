@@ -7,6 +7,7 @@ import com.scotthensen.fooclinic.model.OwnerPetsDTO;
 
 public interface OwnerSvc extends CrudSvc<Owner, Long>
 {
-	Owner findByLastName(String lastName);
+	Owner              findByLastName(String lastName);
+	List<Owner>        findAllByLastNameLike(String lastName);
 	List<OwnerPetsDTO> findOwnerPetsByLastName(String lastName);
 }
